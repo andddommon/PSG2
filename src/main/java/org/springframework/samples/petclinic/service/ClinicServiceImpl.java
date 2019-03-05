@@ -110,5 +110,11 @@ public class ClinicServiceImpl implements ClinicService {
 		return visitRepository.findByPetId(petId);
 	}
 
+	@Override
+	public void removePet(Pet pet) throws DataAccessException {
+		petRepository.remove(pet);
+		
+	}
+
 
 }

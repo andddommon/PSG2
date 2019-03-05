@@ -112,8 +112,7 @@ public class PetController {
 
 	// Remove a pet
 	@RequestMapping(value = "/pets/{petId}/remove", method = RequestMethod.GET)
-	public String removePet(@Valid Pet pet, Owner owner, ModelMap model) {
-		owner.removePet(pet);
+	public String removePet(@Valid Pet pet) {
 		this.clinicService.removePet(pet);
 		return "redirect:/owners/{ownerId}";
 
